@@ -13,7 +13,7 @@ namespace ReleaseNotesGenerator.Controllers
         {
             _gitHubClient = new GitHubClient(new ProductHeaderValue("ReleaseNotesGenerator-GenAI"))
             {
-                Credentials = new Credentials("ztest")
+                Credentials = new Credentials("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")
             };
         }
 
