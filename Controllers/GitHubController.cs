@@ -13,15 +13,22 @@ namespace ReleaseNotesGenerator.Controllers
         {
             _gitHubClient = new GitHubClient(new ProductHeaderValue("ReleaseNotesGenerator-GenAI"))
             {
-                Credentials = new Credentials("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")
+                Credentials = new Credentials("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")
             };
         }
 
         [HttpGet("pull-requests")]
         public async Task<IActionResult>GetPullRequests(string owner, string repo)
         {
-            var pullRequests = await _gitHubClient.PullRequest.GetAllForRepository(owner, repo);
-            return Ok(pullRequests.Select(pr=>new {pr.Title,pr.Body,pr.State}));
+            try
+            {
+                var pullRequests = await _gitHubClient.PullRequest.GetAllForRepository(owner, repo);
+                return Ok(pullRequests.Select(pr => new { pr.Title, pr.Body, pr.State }));
+            }
+            catch(Exception ex) 
+            {
+                throw;
+            }
         }
         //TOdo remove comments
         //Get Github token
