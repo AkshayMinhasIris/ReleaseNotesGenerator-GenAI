@@ -63,7 +63,7 @@ namespace ReleaseNotesGenerator.Controllers
             {
                throw new Exception(ex.Message);
             }
-            return Ok(data);
+            return Ok(data); //Todo
         }
     }
 }
