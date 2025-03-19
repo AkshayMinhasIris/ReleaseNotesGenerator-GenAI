@@ -11,9 +11,9 @@ namespace ReleaseNotesGenerator.Controllers
         private readonly GitHubClient _gitHubClient;
         public GitHubController()
         {
-            _gitHubClient = new GitHubClient(new ProductHeaderValue("ReleaseNotesAPI"))
+            _gitHubClient = new GitHubClient(new ProductHeaderValue("ReleaseNotesGenerator-GenAI"))
             {
-                Credentials = new Credentials("github_access_token")
+                Credentials = new Credentials("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")
             };
         }
 
