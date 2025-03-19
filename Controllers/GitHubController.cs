@@ -23,7 +23,7 @@ namespace ReleaseNotesGenerator.Controllers
             var pullRequests = await _gitHubClient.PullRequest.GetAllForRepository(owner, repo);
             return Ok(pullRequests.Select(pr=>new {pr.Title,pr.Body,pr.State}));
         }
-
+        //TOdo remove comments
         //Get Github token
         //check PR form github
         //UI page to make list of PR
