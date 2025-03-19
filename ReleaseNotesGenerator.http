@@ -1,0 +1,6 @@
+@ReleaseNotesGenerator_HostAddress = http://localhost:5245
+
+GET {{ReleaseNotesGenerator_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
