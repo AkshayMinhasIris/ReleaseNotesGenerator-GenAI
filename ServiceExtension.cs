@@ -24,7 +24,7 @@ namespace ReleaseNotesGenerator
             services.AddSingleton(gitHubClient);
         }
         
-        public static string generatepromt(string title, string description)
+        public static string ReleaseNotesPrompt(string title, string description)
         {
             return $@" You are an expert in creating concise, professional release notes.
                        Summarize the following Pull Request into a structured JSON format suitable for both clients and internal teams.
