@@ -23,7 +23,7 @@ namespace ReleaseNotesGenerator
             };
             services.AddSingleton(gitHubClient);
         }
-        h
+        
         public static string generatepromt(string title, string description)
         {
             return $@" You are an expert in creating concise, professional release notes.
