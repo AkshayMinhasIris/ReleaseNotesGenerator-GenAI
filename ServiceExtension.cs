@@ -19,7 +19,7 @@ namespace ReleaseNotesGenerator
         {
             var gitHubClient = new GitHubClient(new ProductHeaderValue("ReleaseNotesGenerator-GenAI"))
             {
-                Credentials = new Credentials(configuration["GitHubToken"])
+                Credentials = new Credentials(configuration["GitHubKey"])
             };
             services.AddSingleton(gitHubClient);
         }
