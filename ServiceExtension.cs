@@ -19,12 +19,12 @@ namespace ReleaseNotesGenerator
         {
             var gitHubClient = new GitHubClient(new ProductHeaderValue("ReleaseNotesGenerator-GenAI"))
             {
-                Credentials = new Credentials(configuration["Key"])
+                Credentials = new Credentials(configuration["GitHubToken"])
             };
             services.AddSingleton(gitHubClient);
         }
-
-        public static string ReleaseNotesPrompt(string title, string description)
+        h
+        public static string generatepromt(string title, string description)
         {
             return $@" You are an expert in creating concise, professional release notes.
                        Summarize the following Pull Request into a structured JSON format suitable for both clients and internal teams.
