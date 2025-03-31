@@ -13,6 +13,7 @@ namespace ReleaseNotesGenerator.Controllers
         {
             _gitHubClient = new GitHubClient(new ProductHeaderValue("ReleaseNotesGenerator-GenAI"))
             {
+                //TODO: Need to refactor the code
                 Credentials = new Credentials("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")
             };
         }
