@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Octokit;
+using OpenAI.Chat;
+using OpenAI;
+using System.Text.Json;
 
 namespace ReleaseNotesGenerator.Controllers
 {
@@ -13,7 +16,8 @@ namespace ReleaseNotesGenerator.Controllers
         {
             _gitHubClient = new GitHubClient(new ProductHeaderValue("ReleaseNotesGenerator-GenAI"))
             {
-                Credentials = new Credentials("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")
+                //TODO: get from URL documents
+                Credentials = new Credentials("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")
             };
         }
 
@@ -22,18 +26,13 @@ namespace ReleaseNotesGenerator.Controllers
         {
             try
             {
-                var pullRequests = await _gitHubClient.PullRequest.GetAllForRepository(owner, repo);
+                var pullRequests = await _gitHubClient.PullRequest.GetAllForRepository(owner, repo, new PullRequestRequest { State = ItemStateFilter.All});
                 return Ok(pullRequests.Select(pr => new { pr.Title, pr.Body, pr.State }));
             }
             catch(Exception ex) 
             {
                 throw;
             }
-        }
-        //TOdo remove comments
-        //Get Github token
-        //check PR form github
-        //UI page to make list of PR
-        //select PR list and send to Open AI
+        }        
     }
 }
